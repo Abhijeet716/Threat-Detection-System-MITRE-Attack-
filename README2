@@ -1,0 +1,71 @@
+# 🔐 Threat Detection System using MITRE ATT&CK
+
+A full-stack cybersecurity project that simulates and detects common attack patterns such as brute force and traffic spikes, and maps them to MITRE ATT&CK techniques. Built as a SOC-style monitoring dashboard with real-time alerts and log analysis.
+
+---
+
+## 📌 Features
+
+- 🔑 User Authentication (JWT-based login/register)
+- 🟢 Monitoring ON/OFF control (SOC simulation)
+- 📊 Real-time Dashboard:
+  - Active IP tracking
+  - Suspicious IP detection
+  - Alert generation
+  - Attack classification
+- 🚨 Attack Detection:
+  - Brute Force (multiple failed logins)
+  - Traffic Spike / DoS-like behavior (simulated)
+- 🧠 MITRE ATT&CK Mapping:
+  - Example: T1110 – Brute Force
+- 🗂️ Alert history stored in SQLite
+
+---
+
+## 🧱 System Architecture
+
+Frontend (React)
+↓
+Backend (Node.js / Express)
+↓
+Log Generator (Python scripts)
+↓
+Detection Engine (Python rules)
+↓
+SQLite Database
+↓
+Dashboard (Alerts + IP Monitoring)
+
+---
+
+## 🛠️ Tech Stack
+
+- Frontend: React + Vite
+- Backend: Node.js, Express
+- Database: SQLite
+- Detection Engine: Python
+- Logging: Text-based logs
+- Concepts: Cybersecurity, Log Analysis, Threat Detection
+
+---
+
+## 🧪 Attack Simulation
+
+⚠️ This project uses **safe, local simulations only**
+
+### Brute Force Simulation
+- Multiple failed login attempts
+- Account lock after 3 attempts (30 min)
+- Detected and mapped to MITRE T1110
+
+### Traffic Spike Simulation
+- High number of requests from same IP
+- Flagged as suspicious (DoS-like behavior)
+
+---
+
+## 🧠 MITRE ATT&CK Integration
+
+Detected attacks are mapped to:
+- Technique ID
+- Attack category

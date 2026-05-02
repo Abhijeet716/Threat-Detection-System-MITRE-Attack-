@@ -1,0 +1,8 @@
+node_modules/
+client/node_modules/
+server/node_modules/
+dist/
+.vscode/
+.env
+db/threat.db
+logs/*.log

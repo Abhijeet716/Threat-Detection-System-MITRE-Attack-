@@ -1,0 +1,92 @@
+Project Name:Threat Detection Project 
+Using MITRE ATTACK here
+Website: 
+
+Idea:
+Simulate attacks (like brute force, phishing logs)
+Detect them using logs
+
+Example:
+Detect login failures → map it to MITRE technique
+Show alert dashboard
+
+Tools to use for building the project
+Backend: Node.js
+Database: SQLite (start simple)
+Frontend: React
+Logs: Text file
+Detection Engine: Python module
+Framework reference: MITRE ATTACK
+
+System architecture 
+
+Frontend (React)
+        ↓
+Backend (Node.js API)
+        ↓
+Log Generator (text file)
+        ↓
+Detection Engine (Python rules)
+        ↓
+Database (SQLite)
+        ↓
+Dashboard (alerts + IP analysis)
+
+
+FRONTEND: React
+Authentication: 
+    1.Register/login page
+    2.Stores users info(SQLite)
+
+Monitoring Switch
+Button: On/off 
+when On->System starts analyzing system
+when off->stops detection
+(This is like an SOC monitoring System)
+
+Dashboard
+->Shows active ip's that the system is accessing currently
+->flag suspicious ip
+->alerts
+->attack types(dos, ddos, multiple login failure)
+->MITRE mapping
+The Frontend should look like this with the dashboard that can be hidden when clicked on the 3 lines of Dashboard
+![alt text](image.png)
+
+
+BACKEND:Node.js
+
+I want to detect suspicious attacks like brute force attack, dos and ddos
+Do active scanning of network(IP address)
+
+The maximum number of attempts for login is 3 before locking that account for half an hour and alerts the user in the dashboard next time he log's in
+
+This project should be mapped to MITRE Framework
+
+1.Brute Force Detection
+If login attempts > 3 → account locked for 30 minutes
+Generates alert
+Maps to:
+MITRE ID: T1110 (Brute Force)
+
+2.DoS / Traffic Spike Detection (Simulated)
+High number of requests from a single IP in short time
+Flag as suspicious
+⚠️ Important:
+You are simulating DoS, not performing real attacks
+3.Suspicious IP Tracking
+Tracks frequency of requests per IP
+Flags abnormal behavior
+
+
+MITRE ATT&CK Mapping (CORE FEATURE)
+
+Each detected attack is mapped to:
+
+Technique ID
+Attack category
+
+Example:
+Attack: Brute Force
+MITRE Technique: T1110
+Tactic: Credential Access
